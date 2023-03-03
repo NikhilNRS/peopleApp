@@ -19,6 +19,10 @@ class InMemoryBackend {
     listPerson(name) {
         return this.people.get(name);
     }
+    allPeople() {
+        const people = Array.from(this.people.values());
+        return people;
+    }
     addPerson(person) {
         this.people.set(person.name, person);
     }

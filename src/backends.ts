@@ -23,6 +23,11 @@ export class InMemoryBackend implements IPeopleBackend {
         return this.people.get(name)!
     }
 
+    allPeople(): Array<Person> {
+        const people = Array.from(this.people.values())
+        return people
+    }
+
     addPerson(person: Person): void {
         this.people.set(person.name, person)
     }

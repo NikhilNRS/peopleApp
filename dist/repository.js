@@ -13,6 +13,9 @@ class PeopleRepository {
         }
         return person;
     }
+    allPeople() {
+        return this.backend.allPeople();
+    }
     addPerson(person) {
         this.backend.addPerson(person);
     }

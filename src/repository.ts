@@ -5,6 +5,7 @@ export interface IPeopleBackend {
     addPerson: (person: Person) => void;
     deletePerson: (person: Person) => void;
     updatePerson: (person: Person) => void;
+    allPeople: () => Array<Person>;
 }
 
 export class PeopleRepository {
@@ -22,6 +23,11 @@ export class PeopleRepository {
             throw Error()
         }
         return person
+    }
+
+    allPeople(): Array<Person> {
+        return this.backend.allPeople()
+
     }
 
     addPerson(person: Person): void {

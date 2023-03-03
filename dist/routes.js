@@ -13,6 +13,13 @@ router.get("/person/:name", (req, res) => {
     const person = peopleRepository.listPerson(name);
     res.send(person.makeString());
 });
+router.get("/person", (req, res) => {
+    const all_people = peopleRepository.allPeople();
+    res.send(all_people);
+});
+router.get("/person", (req, res) => {
+    const all_People = peopleRepository.allPeople();
+});
 router.post("/person", (req, res) => {
     console.log(req.body);
     const person = new backends_2.Person(req.body.name, req.body.age, req.body.job);
